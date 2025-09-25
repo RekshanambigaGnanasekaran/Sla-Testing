@@ -1,0 +1,25 @@
+package courseDetails;
+public class StudentDetails {
+	String name = "Rekshana";
+	String address = "Chennai ,Tamilnadu";
+	byte age = 22;
+	int stdId = 102;
+	Long phoneNumber = 8574145263L;
+	float height = 168.2f;
+	double weight = 48;
+	String clgName = "Anna university";
+	String department ="Electrical";
+	public static void main(String[] args) {
+    StudentDetails details = new StudentDetails();
+    System.out.println("Name : " + details.name);
+    System.out.println("Address : " + details.address);
+    System.out.println("Age : " + details.age);
+    System.out.println("Student Id : " + details.stdId);
+    System.out.println("Phone Number : " + details.phoneNumber);
+    System.out.println("Height : " + details.height);
+    System.out.println("Weight : " + details.weight);
+    System.out.println("Clg Name : " + details.clgName);
+    System.out.println("Department : " + details.department);	
+	}
+
+}
