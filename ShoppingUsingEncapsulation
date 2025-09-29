@@ -1,0 +1,48 @@
+package slaTask;
+
+public class Shopping {
+	
+	private String productName;
+	private int quantity;
+	private float price;
+	
+	public String getproductName() {
+		return productName;
+	}
+	public int getquantity() {
+		return quantity;
+	}	
+	public float getprice() {
+		return price;
+	}
+	public void setproductName(String name) {
+		this.productName = name;
+	}
+	public void setquantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public void setprice(float price) {
+		this.price = price;
+	}
+}
+
+
+
+package slaTask;
+
+public class ShoppingMain extends Shopping{
+	
+	public static void main(String[] args) {
+		ShoppingMain shop = new ShoppingMain();
+		shop.setproductName("Note");
+		String productName = shop.getproductName();
+		System.out.println("Product name is : " + productName);
+		shop.setquantity(20);
+		int quantity = shop.getquantity();
+		System.out.println("Product quantity is : " + quantity);
+		shop.setprice(42.5f);
+		float price = shop.getprice();
+		System.out.println("Product price is : " + price);
+	}
+
+}
