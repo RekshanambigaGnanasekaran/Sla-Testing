@@ -31,9 +31,7 @@ public class LinkedHashSetEg {
         }else {
         	wildAnimal.add("Leopard");
         	System.out.println("\nAfter adding the new animal name :");
-        	for(String animals : wildAnimal) {
-            	System.out.println(animals);
-            }
+            System.out.println(wildAnimal);
         }	
 	}
 
