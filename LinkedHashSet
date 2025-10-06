@@ -1,0 +1,40 @@
+package slaTask;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class LinkedHashSetEg {
+	
+	public static void main(String[] args) {
+		
+		Set<String> domesticAnimal = new LinkedHashSet<String>();		
+		domesticAnimal.add("Dog");
+		domesticAnimal.add("Cat");
+		domesticAnimal.add("Cow");
+		domesticAnimal.add("Goat");
+		
+		Set<String> wildAnimal = new LinkedHashSet<String>();
+        wildAnimal.add("Lion");
+        wildAnimal.add("Tiger");
+        wildAnimal.add("Elephant");
+        wildAnimal.add("Deer");
+        
+        wildAnimal.addAll(domesticAnimal);
+        System.out.println("The animals list are :\n");
+        for(String animals : wildAnimal) {
+        	System.out.println(animals);
+        }
+        
+        boolean isExist = wildAnimal.contains("Leopard");
+        if(isExist) {
+        	System.out.println("Leopard is available in animal list");
+        }else {
+        	wildAnimal.add("Leopard");
+        	System.out.println("\nAfter adding the new animal name :");
+        	for(String animals : wildAnimal) {
+            	System.out.println(animals);
+            }
+        }	
+	}
+
+}
