@@ -64,11 +64,11 @@ public class WebsiteTesting {
 		System.out.println("Webstite url : " + firefoxurl);
 		driverFireFox.quit();
 		
-		siteUrl.add(chromeSiteUrl);
-		siteUrl.add(wikipediaSiteUrl);
-		siteUrl.add(youtubeSiteUrl);
-		siteUrl.add(amazonSiteUrl);
-		siteUrl.add(firefoxurl);
+		siteUrl.add("Site Title : " + chromeUrlTitle + " " +  " | SiteUrl :" + chromeSiteUrl);
+		siteUrl.add("Site Title : " + wikipediatitle + " " +  " | SiteUrl :" + wikipediaSiteUrl);
+		siteUrl.add("Site Title : " + YotubeTitle + " " +  " | SiteUrl :" + youtubeSiteUrl);
+		siteUrl.add("Site Title : " + amazonTitle + " " +  " | SiteUrl :" + amazonSiteUrl);
+		siteUrl.add("Site Title : " + firefoxTitle + " " +  " | SiteUrl :" + firefoxurl);
 		
 		System.out.println("The website URL's are : ");
 		for(String websiteUrl : siteUrl) {
