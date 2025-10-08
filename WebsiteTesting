@@ -1,0 +1,80 @@
+package SeleniumPgm;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class WebsiteTesting {
+	
+	public static void main(String[] args) {
+		
+		List<String> siteUrl = new LinkedList<String>();
+		
+		String chromeSiteUrl = "https://www.google.com";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.navigate().to(chromeSiteUrl);
+		String chromeUrlTitle = driver.getTitle();
+		System.out.println("Website title : " + chromeUrlTitle);		
+		String url = driver.getCurrentUrl();
+		System.out.println("Webstite url : " + url);
+		driver.quit();
+		
+		String wikipediaSiteUrl = "https://www.wikipedia.org";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driverWikipedia = new ChromeDriver();
+		driverWikipedia.navigate().to(wikipediaSiteUrl);
+		String wikipediatitle = driverWikipedia.getTitle();
+		System.out.println("Website title : " + wikipediatitle);		
+		String wikipediaurl = driverWikipedia.getCurrentUrl();
+		System.out.println("Webstite url : " + wikipediaurl);
+		driverWikipedia.quit();
+		
+		String youtubeSiteUrl = "https://www.youtube.com";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driverYouTube = new ChromeDriver();
+		driverYouTube.navigate().to(youtubeSiteUrl);
+		String YotubeTitle = driverYouTube.getTitle();
+		System.out.println("Website title : " + YotubeTitle);		
+		String Youtubeurl = driverYouTube.getCurrentUrl();
+		System.out.println("Webstite url : " + Youtubeurl);
+		driverYouTube.quit();
+		
+		String amazonSiteUrl = "https://www.amazon.in";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driverAmazon = new ChromeDriver();
+		driverAmazon.navigate().to(amazonSiteUrl);
+		String amazonTitle = driverAmazon.getTitle();
+		System.out.println("Website title : " + amazonTitle);		
+		String amazonurl = driverAmazon.getCurrentUrl();
+		System.out.println("Webstite url : " + amazonurl);
+		driverAmazon.quit();
+		
+		String firefoxSiteUrl = "https://www.fireFox.com";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driverFireFox = new ChromeDriver();
+		driverFireFox.navigate().to(firefoxSiteUrl);
+		String firefoxTitle = driverFireFox.getTitle();
+		System.out.println("Website title : " + firefoxTitle);		
+		String firefoxurl = driverFireFox.getCurrentUrl();
+		System.out.println("Webstite url : " + firefoxurl);
+		driverFireFox.quit();
+		
+		siteUrl.add(chromeSiteUrl);
+		siteUrl.add(wikipediaSiteUrl);
+		siteUrl.add(youtubeSiteUrl);
+		siteUrl.add(amazonSiteUrl);
+		siteUrl.add(firefoxurl);
+		
+		System.out.println("The website URL's are : ");
+		for(String websiteUrl : siteUrl) {
+			System.out.println(websiteUrl);
+		}
+		
+	}
+
+}
