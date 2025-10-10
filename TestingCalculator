@@ -1,0 +1,30 @@
+package SeleniumTask;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
+public class TestingCalculator {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+        driver.get("https://testsheepnz.github.io/BasicCalculator.html");
+        
+        WebElement firstNumber = driver.findElement(By.id("number1Field"));
+        firstNumber.sendKeys("25");
+        
+        WebElement secondNumber = driver.findElement(By.id("number2Field"));
+        secondNumber.sendKeys("53");
+        
+        //It does not set the number in answer field
+        WebElement answer = driver.findElement(By.id("numberAnswerField"));
+        answer.sendKeys("78");
+        
+        WebElement linkName = driver.findElement(By.linkText("NUMBER GAME"));
+        String link = linkName.getText();
+        System.out.println("The link name is : " + link);               
+        driver.close();
+	}
+}
