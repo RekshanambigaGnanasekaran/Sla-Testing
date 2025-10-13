@@ -1,0 +1,46 @@
+package SeleniumTask;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebsiteLink {
+
+	public static void main(String[] args) {
+
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://academybugs.com/contact-us-form/");
+				
+    List<String> links = new ArrayList<>();
+
+		WebElement logoLink = driver.findElement(By.xpath("//h3//a"));
+		String logo = logoLink.getText();
+		links.add(logo);
+		
+		List<WebElement> websiteLink = driver.findElements(By.xpath("//nav//a"));
+		for(WebElement website : websiteLink) {
+			String web = website.getText();
+			links.add(web);
+		}
+		
+		List<WebElement> footerLinks = driver.findElements(By.xpath("//footer//a"));
+		for(WebElement footer : footerLinks) {
+			String footerLink = footer.getText();
+			links.add(footerLink);
+		}
+
+		System.out.println("The website links are :");
+		for(String linkName : links) {
+			if(!linkName.isEmpty()) {
+				System.out.println(linkName);
+			}
+		}
+       driver.close();
+	}
+}
+
