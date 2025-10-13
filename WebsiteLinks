@@ -16,7 +16,7 @@ public class WebsiteLink {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://academybugs.com/contact-us-form/");
 				
-    List<String> links = new ArrayList<>();
+         List<String> links = new ArrayList<>();
 
 		WebElement logoLink = driver.findElement(By.xpath("//h3//a"));
 		String logo = logoLink.getText();
