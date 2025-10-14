@@ -1,0 +1,44 @@
+package SeleniumTask;
+
+import java.util.List;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertEg {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php");
+		
+		//First alert
+		WebElement firstLink = driver.findElement(By.cssSelector("button.btn-primary"));
+		firstLink.click();
+		Thread.sleep(2000);
+		Alert alert = driver.switchTo().alert();
+		System.out.println(alert.getText());
+		alert.accept();
+		
+		//Second alert
+		WebElement secondLink = driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[3]"));
+		secondLink.click();
+		Thread.sleep(2000);
+		Alert al = driver.switchTo().alert();
+		System.out.println(al.getText());
+		al.accept();
+		
+		//Third alert
+		WebElement thirdLink = driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[4]"));
+		thirdLink.click();
+		Thread.sleep(2000);
+		Alert alt = driver.switchTo().alert();
+		System.out.println(alt.getText());
+		alt.sendKeys("rekshana");
+		alt.accept();
+	}
+
+}
