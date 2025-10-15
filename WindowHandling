@@ -1,0 +1,26 @@
+package SeleniumTask;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandling {	
+	public static void main(String[] args) {	
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");	
+		String parentWindow = driver.getWindowHandle();
+		System.out.println("Parent window handle: " + parentWindow);
+        System.out.println("Parent window URL: " + driver.getCurrentUrl());
+        driver.findElement(By.id("newWindowsBtn")).click();
+		Set<String> handles = driver.getWindowHandles();
+		for(String childHandle : handles) {
+			if(!childHandle.equals(parentWindow)) {
+				    driver.switchTo().window(childHandle);
+	                System.out.println("Child window handle: " + childHandle);
+	                System.out.println("Child window URL: " + driver.getCurrentUrl());
+			}
+		}
+	}
+}
