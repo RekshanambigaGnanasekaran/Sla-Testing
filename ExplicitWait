@@ -1,0 +1,41 @@
+package SeleniumTask;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ExplicitWait {
+
+public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        
+        try {
+        	String url = "https://www.hyrtutorials.com/p/waits-demo.html";
+        	driver.get(url);
+       	
+        	WebElement button = driver.findElement(By.id("btn1"));
+        	button.click();
+        	
+        	wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.id("btn1"))));
+        	
+        	button = driver.findElement(By.id("btn1"));
+        	if(!button.isEnabled()) {
+        		System.out.println("Button AddTextBox1 is now disabled.");
+        	} else {
+        		System.out.println("Button AddTextBox1 is still enabled.");
+        	}	
+        } catch(Exception e) {
+        	e.printStackTrace();
+        } finally {
+        	driver.quit();
+        }
+	}
+
+}
