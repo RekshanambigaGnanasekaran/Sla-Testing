@@ -1,0 +1,44 @@
+package MiniProject;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SwagLabsTesting {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.saucedemo.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		WebElement userName = driver.findElement(By.id("user-name"));
+		userName.sendKeys("standard_user");
+		
+		WebElement password = driver.findElement(By.id("password"));
+		password.sendKeys("secret_sauce");
+		
+		WebElement button = driver.findElement(By.id("login-button"));
+		button.click();
+		
+		WebElement textProduct = driver.findElement(By.xpath("//span[text()='Products']"));
+		String text = textProduct.getText();
+		System.out.println(text);
+		if(text.contains("Products")) {
+			System.out.println("Login succesfully...");
+		}
+		
+		WebElement sideButton = driver.findElement(By.id("react-burger-menu-btn"));
+		sideButton.click();
+			
+		WebElement logOut = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
+		logOut.click();
+		System.out.println("Logout successfully...");
+		
+		
+	}
+
+}
